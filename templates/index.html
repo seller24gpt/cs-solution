@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS 대시보드</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <h1>CS 음성문의 대시보드</h1>
+  <section class="kpis">
+    <div class="card"><h3>일별 인입수</h3><p id="inbound">-</p></div>
+    <div class="card"><h3>일별 처리수</h3><p id="processed">-</p></div>
+    <div class="card"><h3>일별 미처리수</h3><p id="unprocessed">-</p></div>
+    <div class="card"><h3>처리율</h3><p id="processed-rate">-</p></div>
+  </section>
+
+  <section>
+    <h2>인입 목록 (행 클릭 시 상세/수정)</h2>
+    <table>
+      <thead>
+        <tr><th>ID</th><th>인입시간</th><th>발신번호</th><th>요약</th><th>상태</th></tr>
+      </thead>
+      <tbody id="calls-body"></tbody>
+    </table>
+  </section>
+
+  <section class="details">
+    <h2>상세 내용</h2>
+    <p><strong>녹취 URL:</strong> <a id="recording-url" href="#" target="_blank">-</a></p>
+    <p><strong>전사 원문:</strong></p>
+    <pre id="transcript">-</pre>
+    <p><strong>AI 요약:</strong></p>
+    <pre id="summary">-</pre>
+  </section>
+
+  <section>
+    <h2>처리 업데이트</h2>
+    <form id="update-form">
+      <input type="number" id="call-id" placeholder="Call ID" required />
+      <select id="status" required>
+        <option value="unprocessed">미처리</option>
+        <option value="in_progress">처리중</option>
+        <option value="done">처리완료</option>
+        <option value="reopened">재문의</option>
+      </select>
+      <input type="text" id="resolver" placeholder="담당자" />
+      <input type="text" id="channel" placeholder="응대채널 (콜백/문자/카톡)" />
+      <textarea id="response-note" placeholder="실제 답변 내용"></textarea>
+      <textarea id="action-note" placeholder="내부 처리 메모"></textarea>
+      <button type="submit">저장</button>
+    </form>
+    <p id="form-message"></p>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

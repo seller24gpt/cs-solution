@@ -1,0 +1,13 @@
+body { font-family: sans-serif; margin: 24px; background: #f8fafc; }
+h1, h2 { color: #0f172a; }
+.kpis { display: flex; gap: 16px; margin-bottom: 24px; flex-wrap: wrap; }
+.card { background: white; border-radius: 8px; padding: 12px 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.08); min-width: 160px; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { border: 1px solid #e2e8f0; padding: 8px; font-size: 14px; }
+.clickable-row { cursor: pointer; }
+.clickable-row:hover { background: #eff6ff; }
+.details { margin: 18px 0; padding: 12px; background: #fff; border: 1px solid #e2e8f0; }
+pre { white-space: pre-wrap; word-break: break-word; }
+form { display: flex; flex-direction: column; gap: 8px; background: white; padding: 12px; }
+input, select, textarea, button { padding: 8px; font-size: 14px; }
+button { background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; }
